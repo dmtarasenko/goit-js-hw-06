@@ -1,13 +1,15 @@
-const couterValue = document.querySelector("#value");
-const decValue = document.querySelector("[data-action=decrement]");
-const incValue = document.querySelector("[data-action=increment]");
+const couterValueEl = document.querySelector("#value");
+const decrementBtnEl = document.querySelector("[data-action=decrement]");
+const incrementBtnEl = document.querySelector("[data-action=increment]");
 
-couterValue.textContent = 0;
+let couterValue = 0;
 
-decValue.addEventListener("click", () => {
-  couterValue.textContent--;
+decrementBtnEl.addEventListener("click", () => {
+  couterValue -= 1;
+  couterValueEl.textContent = couterValue;
 });
 
-incValue.addEventListener("click", () => {
-  couterValue.textContent++;
+incrementBtnEl.addEventListener("click", () => {
+  couterValue += 1;
+  couterValueEl.textContent = couterValue;
 });
